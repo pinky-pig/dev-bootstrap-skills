@@ -53,7 +53,7 @@ npx skills add /Users/wangwenbo/Documents/wangwenbo/Mine/dev-bootstrap-skills/pl
 ### `backend-templates`
 
 - `express-modular-bootstrap`
-  - 参考 `oopus-flow/apps/server/src` 的模块化服务端结构：
+  - 参考 `oopus-flow/apps/server/src` 的 TypeScript 模块化服务端结构：
     - `src/modules/<name>/<name>.controller.ts`
     - `src/modules/<name>/<name>.service.ts`
     - `src/modules/<name>/<name>.model.ts`

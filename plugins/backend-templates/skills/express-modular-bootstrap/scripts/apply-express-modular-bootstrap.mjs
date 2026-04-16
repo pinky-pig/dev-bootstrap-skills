@@ -92,18 +92,19 @@ function ensureScripts(pkg) {
   }
 
   for (const [key, value] of Object.entries(defaults)) {
-    if (!pkg.scripts[key])
-      pkg.scripts[key] = value
+    pkg.scripts[key] = value
   }
 }
 
 async function ensurePackageJson() {
   const pkg = await readJson('package.json')
 
-  if (!pkg.type)
-    pkg.type = 'module'
-  if (!pkg.private)
-    pkg.private = true
+  pkg.type = 'module'
+  pkg.private = true
+  if (!pkg.packageManager)
+    pkg.packageManager = 'pnpm@10.33.0'
+  pkg.main = 'dist/index.js'
+  pkg.types = 'dist/index.d.ts'
 
   ensureScripts(pkg)
 
@@ -380,8 +381,28 @@ async function ensurePreconditions() {
     throw new Error('package.json was not found. Run this script at a project root.')
 }
 
+async function warnIfJavaScriptSourcesPresent() {
+  const jsCandidates = [
+    'src/index.js',
+    'src/app.js',
+    'src/server.js',
+  ]
+
+  const found = []
+  for (const file of jsCandidates) {
+    if (await exists(file))
+      found.push(file)
+  }
+
+  if (found.length > 0) {
+    console.warn(`Detected JavaScript entry files: ${found.join(', ')}`)
+    console.warn('This skill enforces TypeScript project setup and does not auto-convert JS source files.')
+  }
+}
+
 async function main() {
   await ensurePreconditions()
+  await warnIfJavaScriptSourcesPresent()
 
   run('pnpm', ['add', ...RUNTIME_DEPS])
   run('pnpm', ['add', '-D', ...DEV_DEPS])

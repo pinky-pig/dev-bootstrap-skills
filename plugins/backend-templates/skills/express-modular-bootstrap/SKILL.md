@@ -5,7 +5,7 @@ description: Bootstrap an Express + TypeScript backend with modules-first archit
 
 # Express Modular Bootstrap
 
-Apply a modules-first Express server structure.
+Apply a modules-first Express + TypeScript server structure.
 
 ## Workflow
 
@@ -26,5 +26,7 @@ Apply a modules-first Express server structure.
 ## Notes
 
 - This skill is intentionally `pnpm`-only.
+- This skill is TypeScript-only and enforces TS scripts/package fields.
 - Re-running is idempotent: existing files are kept unless missing.
+- Existing JavaScript source files are not auto-converted to TypeScript.
 - New modules follow `<name>.controller.ts / <name>.service.ts / <name>.model.ts / <name>.routes.ts`.

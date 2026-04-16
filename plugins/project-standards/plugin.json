@@ -1,0 +1,22 @@
+{
+  "name": "project-standards",
+  "description": "A collection of project standards skills for eslint, prettier, vscode settings, git hooks, Tailwind Iconify, and pnpm monorepo bootstrap.",
+  "version": "0.1.0",
+  "author": {
+    "name": "pinky-pig"
+  },
+  "homepage": "https://github.com/pinky-pig/dev-bootstrap-skills",
+  "repository": "https://github.com/pinky-pig/dev-bootstrap-skills",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "standards",
+    "pnpm",
+    "eslint",
+    "prettier",
+    "vscode",
+    "tailwindcss",
+    "iconify",
+    "monorepo"
+  ]
+}

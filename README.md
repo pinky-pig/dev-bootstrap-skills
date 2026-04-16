@@ -50,6 +50,17 @@ npx skills add /Users/wangwenbo/Documents/wangwenbo/Mine/dev-bootstrap-skills/pl
     - `apps/web` 默认应用目录
     - 支持将单前端项目迁移到 `apps/web`
 
+### `backend-templates`
+
+- `express-modular-bootstrap`
+  - 参考 `oopus-flow/apps/server/src` 的模块化服务端结构：
+    - `src/modules/<name>/<name>.controller.ts`
+    - `src/modules/<name>/<name>.service.ts`
+    - `src/modules/<name>/<name>.model.ts`
+    - `src/modules/<name>/<name>.routes.ts`
+  - 自动补齐 `common/config/docs/infrastructure/tests` 目录骨架
+  - 支持 `--module <name>` 一键生成模块文件
+
 ## 扩展方式（新增插件）
 
 后续如果有新的能力域（例如 `vue` 管理后台模板、`nextjs` 前端模板），直接在 `plugins/` 下新增目录，再在该插件里放多个 skill：
@@ -62,6 +73,11 @@ plugins/
       project-toolchain-bootstrap/
       tailwind-iconify-bootstrap/
       pnpm-monorepo-bootstrap/
+
+  backend-templates/
+    plugin.json
+    skills/
+      express-modular-bootstrap/
 
   vue-admin-templates/
     plugin.json

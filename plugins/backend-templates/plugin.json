@@ -1,0 +1,19 @@
+{
+  "name": "backend-templates",
+  "description": "Backend template skills for Express modular architecture and server scaffolding.",
+  "version": "0.1.0",
+  "author": {
+    "name": "pinky-pig"
+  },
+  "homepage": "https://github.com/pinky-pig/dev-bootstrap-skills",
+  "repository": "https://github.com/pinky-pig/dev-bootstrap-skills",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "backend",
+    "express",
+    "typescript",
+    "modules",
+    "template"
+  ]
+}
